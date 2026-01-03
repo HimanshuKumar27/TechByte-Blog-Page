@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #3498db;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #3498db;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Main Content */
+.main {
+    padding: 3rem 0;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+}
+
+/* Blog List */
+.blog-list {
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Blog Item */
+.blog-item {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.blog-item:hover {
+    transform: translateX(8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.blog-content {
+    padding: 2rem;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.category {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.date {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+.item-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    transition: color 0.3s ease;
+}
+
+.blog-item:hover .item-title {
+    color: #3498db;
+}
+
+.item-description {
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.item-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid #ecf0f1;
+}
+
+.author {
+    font-weight: 600;
+    color: #7f8c8d;
+    font-size: 0.95rem;
+}
+
+.read-more {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.read-more:hover {
+    color: #2980b9;
+    transform: translateX(5px);
+}
+
+/* Footer */
+.footer {
+    background: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav {
+        gap: 1rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .blog-list {
+        max-width: 100%;
+    }
+
+    .item-title {
+        font-size: 1.4rem;
+    }
+
+    .blog-content {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-title {
+        font-size: 1.75rem;
+    }
+
+    .item-title {
+        font-size: 1.3rem;
+    }
+
+    .item-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
